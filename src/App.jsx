@@ -3,7 +3,7 @@ import LoginForm from "./components/LoginForm"
 function App() {
 
   return (
-    <div className="flex h-screen">
+    <div className="content-center h-screen w-screen">
       <LoginForm />
     </div>
   )
