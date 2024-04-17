@@ -1,10 +1,11 @@
 import LoginPage from "./pages/LoginPage"
+import LaundryPage from "./pages/LaundryPage"
 
 function App() {
 
   return (
     <div className="content-center h-screen w-screen">
-      <LoginPage />
+      <LaundryPage />
     </div>
   )
 }
