@@ -1,5 +1,5 @@
 import { Button, CircularProgress, Link, TextField, Typography } from "@mui/material"
-import axios from 'axios'
+import api from "../Api"
 import { useState } from "react"
 
 const LoginForm = () => {
@@ -14,7 +14,7 @@ const LoginForm = () => {
             username: username,
             password: password
         }
-        await axios.post('http://localhost:8000/api/v1/auth/login/', login_data, { withCredentials: true }).then((response) => {
+        await api.post('/api/v1/auth/login/', login_data).then((response) => {
             console.log(response)
         }).catch(() => { })
         setIsLoading(false)

@@ -1,7 +1,7 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import api from '../Api'
 import { Button, Typography } from "@mui/material";
 import { useCookies } from "react-cookie";
 
@@ -12,15 +12,15 @@ const LaundryPage = () => {
     const [cookies] = useCookies(['csrftoken'])
 
     const fetchRecords = () => {
-        axios.get('http://localhost:8000/api/v1/laundry/records/today_records_list/', { withCredentials: true }).then(response => {
+        api.get('/v1/laundry/records/today_records_list/').then(response => {
             console.log(response.data)
             setRecordsData(response.data)
         })
     }
 
     const reserveRecord = (record_pk) => {
-        axios.post(`http://localhost:8000/api/v1/laundry/records/${record_pk}/take_record/`, {}, {
-            withCredentials: true, headers: {
+        api.post(`/v1/laundry/records/${record_pk}/take_record/`, {}, {
+            headers: {
                 "X-CSRFToken": cookies['csrftoken']
             }
         }).then(response => {
