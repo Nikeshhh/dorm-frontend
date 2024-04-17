@@ -1,10 +1,10 @@
-import LoginForm from "./components/LoginForm"
+import LoginPage from "./pages/LoginPage"
 
 function App() {
 
   return (
     <div className="content-center h-screen w-screen">
-      <LoginForm />
+      <LoginPage />
     </div>
   )
 }

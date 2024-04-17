@@ -1,4 +1,4 @@
-import { Button, CircularProgress, TextField, Typography } from "@mui/material"
+import { Button, CircularProgress, Link, TextField, Typography } from "@mui/material"
 import axios from 'axios'
 import { useState } from "react"
 
@@ -25,6 +25,7 @@ const LoginForm = () => {
             <Typography
                 className="flex col-span-full justify-center my-auto"
                 fontSize="32px"
+                fontWeight="bold"
             >
                 ВХОД
             </Typography>
@@ -44,18 +45,18 @@ const LoginForm = () => {
                 required
                 onChange={(e) => setPassword(e.target.value)}
             />
-            <Typography
+            <Link
                 className="col-span-2 content-center text-center"
                 fontSize="16px"
             >
                 Не можете войти?
-            </Typography>
-            <Typography 
+            </Link>
+            <Link 
                 className="col-span-2 content-center text-center"
                 fontSize="16px"
             >
                 Забыли пароль?
-            </Typography>
+            </Link>
             <Button
                 className="col-start-2 col-end-4"
                 variant="contained"
