@@ -37,7 +37,7 @@ const LaundryPage = () => {
 
     return (
         <>
-            <div className="mx-10 my-auto grid grid-cols-4 grid-rows-5 bg-white gap-y-2 gap-x-4">
+            <div className="my-auto grid grid-cols-4 grid-rows-5 bg-white gap-y-2 gap-x-4">
                 {records ? records : <Loader />}
             </div>
         </>
