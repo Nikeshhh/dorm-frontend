@@ -1,11 +1,13 @@
 import { Button, CircularProgress, Link, TextField, Typography } from "@mui/material"
 import api from "../Api"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const LoginForm = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [isLoading, setIsLoading] = useState(false)
+    const navigate = useNavigate()
 
     const submitLogin = async () => {
         setIsLoading(true)
@@ -14,8 +16,9 @@ const LoginForm = () => {
             username: username,
             password: password
         }
-        await api.post('/api/v1/auth/login/', login_data).then((response) => {
+        await api.post('/v1/auth/login/', login_data).then((response) => {
             console.log(response)
+            navigate('/laundry/')
         }).catch(() => { })
         setIsLoading(false)
     }
