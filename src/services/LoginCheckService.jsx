@@ -1,6 +1,8 @@
 import { Navigate } from "react-router-dom"
 import api from "../Api"
 import Layout from "../pages/Layout"
+import { useEffect, useState } from "react"
+import Loader from "../components/Loader"
 
 
 const isAuthenticated = async () => {
@@ -12,26 +14,40 @@ const isAuthenticated = async () => {
 }
 
 const PrivateRoute = () => {
-    const isAuth = isAuthenticated()
+    const [isAuth, setIsAuth] = useState(null)
 
-    return isAuth ? (
+    useEffect(() => {
+        isAuthenticated().then(auth => {
+            setIsAuth(auth)
+        })
+    }, [])
+
+    return isAuth === null ? <Loader /> : isAuth ? (
         <Layout />
     ) : (
         <Navigate to={"/login"} />
     )
+    
 }
 
 export { PrivateRoute }
 
 
 const AuthRedirect = () => {
-    const isAuth = isAuthenticated()
+    const [isAuth, setIsAuth] = useState(null)
 
-    return !isAuth ? (
+    useEffect(() => {
+        isAuthenticated().then(auth => {
+            setIsAuth(auth)
+        })
+    }, [])
+
+    return isAuth === null ? <Loader /> : !isAuth ? (
         <Navigate to={"/login"} />
     ) : (
         <Navigate to={"/home"} />
     )
+    
 }
 
 export { AuthRedirect }
