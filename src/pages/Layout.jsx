@@ -7,7 +7,7 @@ const Layout = () => {
     return (
         <>
             <div
-                className="h-screen w-screen overflow-scroll"
+                className="w-screen overflow-scroll"
                 style={{
                     height: "90vh"
                 }}

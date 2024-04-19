@@ -4,7 +4,9 @@ const LoginPage = () => {
 
     return (
         <>
-            <LoginForm />
+            <div className="h-screen content-center">
+                <LoginForm />
+            </div>
         </>
     )
 }

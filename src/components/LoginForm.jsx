@@ -9,15 +9,13 @@ const LoginForm = () => {
     const [isLoading, setIsLoading] = useState(false)
     const navigate = useNavigate()
 
-    const submitLogin = async () => {
+    const submitLogin = () => {
         setIsLoading(true)
-        console.log(username, password)
         const login_data = {
             username: username,
             password: password
         }
-        await api.post('/v1/auth/login/', login_data).then((response) => {
-            console.log(response)
+        api.post('/v1/auth/login/', login_data).then(() => {
             navigate('/laundry/')
         }).catch(() => { })
         setIsLoading(false)
@@ -44,6 +42,7 @@ const LoginForm = () => {
                 className="col-span-4"
                 id="password"
                 label="Пароль"
+                type="password"
                 variant="outlined"
                 required
                 onChange={(e) => setPassword(e.target.value)}
