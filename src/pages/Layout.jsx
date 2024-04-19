@@ -1,15 +1,18 @@
 import { Outlet } from "react-router-dom"
 import NavBar from "../components/NavBar"
+import HeaderBar from "../components/HeaderBar"
 
 
 
 const Layout = () => {
     return (
         <>
+            <HeaderBar />
             <div
-                className="w-screen overflow-scroll"
+                className="w-screen content-center"
                 style={{
-                    height: "90vh"
+                    paddingBottom: "10vh",
+                    paddingTop: "10vh"
                 }}
             >
                 <Outlet />

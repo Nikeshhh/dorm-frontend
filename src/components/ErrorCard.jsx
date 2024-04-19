@@ -5,8 +5,11 @@ const ErrorCard = () => {
     return (
         <>
             <Card
-                className="col-start-2 col-end-4 row-span-full"
+                className="content-center"
                 variant="outlined"
+                style={{
+                    height: "79vh"
+                }}
             >
                 <CardContent
                     className="flex flex-col justify-between items-center"
