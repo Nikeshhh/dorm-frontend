@@ -27,8 +27,7 @@ const LaundryPage = () => {
     }, [])
 
     useEffect(() => {
-        const r_data = recordsData
-        setRecords(r_data?.map(recordData => {
+        setRecords(recordsData?.map(recordData => {
             return (
                 <LaundryCard key={recordData.pk} record={recordData} onError={onError}/>
             )
