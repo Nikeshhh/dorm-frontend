@@ -3,7 +3,7 @@ import { CircularProgress } from "@mui/material"
 
 const Loader = () => {
     return (
-        <CircularProgress className="mx-auto my-auto col-span-full row-span-full" />
+        <CircularProgress className="fixed inset-x-1/2 inset-y-1/2" />
     )
 }
 

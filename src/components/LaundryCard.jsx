@@ -5,6 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import api from '../Api'
 import { Button, Typography } from "@mui/material";
 import { useCookies } from "react-cookie";
+import LaundryModal from "./LaundryModal";
 
 
 const LaundryCard = (props) => {
@@ -12,6 +13,9 @@ const LaundryCard = (props) => {
     const [cookies] = useCookies(['csrftoken'])
     const [isAvailable, setIsAvailable] = useState(record.is_available)
     const [isOwned, setIsOwned] = useState(record.is_owned)
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
 
     const reserveRecord = (record_pk) => {
         api.post(`/v1/laundry/records/${record_pk}/take_record/`, {}, {
@@ -51,11 +55,12 @@ const LaundryCard = (props) => {
                 <Button
                     variant="contained"
                     disabled={!isOwned && !isAvailable}
-                    onClick={isOwned ? () => freeRecord(record.pk) : () => reserveRecord(record.pk)}
+                    onClick={isOwned ? handleOpen : () => reserveRecord(record.pk)}
                     color={isOwned ? 'error' : 'success'}
                 >
                     {isOwned ? 'X' : '+'}
                 </Button>
+                <LaundryModal open={open} handleClose={handleClose} record_pk={record.pk} freeRecord={freeRecord} />
             </CardContent>
         </Card>
     )
