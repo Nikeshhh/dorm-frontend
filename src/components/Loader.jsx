@@ -3,7 +3,9 @@ import { CircularProgress } from "@mui/material"
 
 const Loader = () => {
     return (
-        <CircularProgress className="fixed inset-x-1/2 inset-y-1/2" />
+        <div className="flex my-auto h-screen justify-center items-center">
+            <CircularProgress  />
+        </div>
     )
 }
 
