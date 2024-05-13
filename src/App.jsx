@@ -8,6 +8,7 @@ import RoomBookPage from "./pages/RoomBookPage"
 import RoomBookStaffPage from "./pages/RoomBookStaffPage"
 import RoomRecordForm from "./components/RoomRecordForm"
 import AllDutiesPage from "./pages/AllDutiesPage"
+import MyDutiesPage from "./pages/MyDutiesPage"
 
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/book" element={<RoomBookPage />} />
         <Route path="/book_create" element={<RoomBookStaffPage />} />
+        <Route path="/all_duties" element={<AllDutiesPage />} />
+        <Route path="/my_duties" element={<MyDutiesPage />} />
         <Route path="/test" element={<AllDutiesPage />} />
       </Route>
     </Routes>
