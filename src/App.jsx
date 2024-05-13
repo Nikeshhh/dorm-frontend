@@ -7,6 +7,7 @@ import { AuthRedirect, PrivateRoute } from "./services/LoginCheckService"
 import RoomBookPage from "./pages/RoomBookPage"
 import RoomBookStaffPage from "./pages/RoomBookStaffPage"
 import RoomRecordForm from "./components/RoomRecordForm"
+import AllDutiesPage from "./pages/AllDutiesPage"
 
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/book" element={<RoomBookPage />} />
         <Route path="/book_create" element={<RoomBookStaffPage />} />
-        <Route path="/test" element={<RoomRecordForm />} />
+        <Route path="/test" element={<AllDutiesPage />} />
       </Route>
     </Routes>
     </>
