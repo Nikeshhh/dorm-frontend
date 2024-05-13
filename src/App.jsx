@@ -6,7 +6,6 @@ import ProfilePage from "./pages/ProfilePage"
 import { AuthRedirect, PrivateRoute } from "./services/LoginCheckService"
 import RoomBookPage from "./pages/RoomBookPage"
 import RoomBookStaffPage from "./pages/RoomBookStaffPage"
-import RoomRecordForm from "./components/RoomRecordForm"
 import AllDutiesPage from "./pages/AllDutiesPage"
 import MyDutiesPage from "./pages/MyDutiesPage"
 

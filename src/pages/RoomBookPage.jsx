@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import api from "../Api"
 import RoomBookRecordCard from '../components/RoomBookRecordCard'
 import Loader from "../components/Loader"
+import NoRoomBookRecordsCard from "../components/NoRoomBookRecordsCard"
 
 
 const RoomBookPage = () => {
@@ -19,11 +20,21 @@ const RoomBookPage = () => {
     }, [])
 
     useEffect(() => {
-        setContent(recordsData?.map(record => {
-            return (
-                <RoomBookRecordCard key={record.pk} record={record} />
-            )
-        }))
+        if (recordsData !== null) {
+            if (recordsData.length > 0) {
+                setContent(recordsData?.map(record => {
+                    return (
+                        <RoomBookRecordCard key={record.pk} record={record} />
+                    )
+                }))
+            }
+            else {
+                setContent(
+                    <NoRoomBookRecordsCard />
+                )
+            }
+        }
+        
     }, [recordsData])
 
     return (

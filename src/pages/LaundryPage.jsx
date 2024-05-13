@@ -3,6 +3,7 @@ import LaundryCard from "../components/LaundryCard"
 import api from '../Api'
 import Loader from "../components/Loader"
 import ErrorCard from "../components/ErrorCard"
+import NoLaundryRecordsCard from "../components/NoLaundryRecordsCard"
 
 
 const LaundryPage = () => {
@@ -27,11 +28,21 @@ const LaundryPage = () => {
     }, [])
 
     useEffect(() => {
-        setRecords(recordsData?.map(recordData => {
-            return (
-                <LaundryCard key={recordData.pk} record={recordData} onError={onError}/>
-            )
-        }))
+        if (recordsData !== null) {
+            if (recordsData.length > 0) {
+                setRecords(recordsData?.map(recordData => {
+                    return (
+                        <LaundryCard key={recordData.pk} record={recordData} onError={onError}/>
+                    )
+                }))
+            }
+            else {
+                setRecords(
+                    <NoLaundryRecordsCard />
+                )
+            }
+        }
+        
     }, [recordsData])
 
     return (

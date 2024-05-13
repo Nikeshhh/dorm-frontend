@@ -1,4 +1,3 @@
-import ErrorCard from "../components/ErrorCard"
 import api from '../Api'
 import { useEffect, useState } from "react"
 import Loader from "../components/Loader"
@@ -22,7 +21,6 @@ const AllDutiesPage = () => {
     }, [])
 
     useEffect(() => {
-        console.log(dutiesData)
         setContent(
             dutiesData?.map((duty) => {
                 return (<DutyCard key={duty.pk} duty={duty} />)
