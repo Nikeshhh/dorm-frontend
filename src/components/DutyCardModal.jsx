@@ -4,9 +4,11 @@ import { FormatDate } from "../shared/DateServices";
 import SwapResidentModal from "./SwapResidentModal";
 import { useState } from "react";
 import InfoModal from "./InfoModal";
+import { useNavigate } from "react-router-dom";
 
 
 const DutyCardModal = (props) => {
+    const navigate = useNavigate()
     const { open, handleClose, duty, swappable = false } = props
     const date = FormatDate(duty.date)
     const [nestedOpen, setNestedOpen] = useState(false);
@@ -16,6 +18,11 @@ const DutyCardModal = (props) => {
     const [infoOpen, setInfoOpen] = useState(false)
     const handleInfoOpen = () => setInfoOpen(true)
     const handleInfoClose = () => setInfoOpen(false)
+
+    const handleSwapDuties = () => {
+        handleClose()
+        navigate(`/swap_duties/${duty.pk}`)
+    }
 
     return (
         <>
@@ -43,7 +50,7 @@ const DutyCardModal = (props) => {
                         )
                     })}
                     {swappable ? (<div className="flex justify-evenly pt-2">
-                    <Button variant="contained">
+                    <Button variant="contained" onClick={handleSwapDuties}>
                         Обмен
                     </Button>
                     <Button variant="contained" onClick={handleNestedOpen}>
