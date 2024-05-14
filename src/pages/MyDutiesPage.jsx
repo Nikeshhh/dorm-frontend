@@ -25,7 +25,7 @@ const MyDutiesPage = () => {
         if (dutiesData?.length > 0) {
             setContent(
                 dutiesData?.map((duty) => {
-                    return (<DutyCard key={duty.pk} duty={duty} />)
+                    return (<DutyCard key={duty.pk} swappable={true} duty={duty} />)
                 })
             )
         }

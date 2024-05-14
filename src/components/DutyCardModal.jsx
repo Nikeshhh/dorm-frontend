@@ -1,12 +1,21 @@
 /* eslint-disable react/prop-types */
-import { Modal, Typography } from "@mui/material";
+import { Button, Modal, Typography } from "@mui/material";
 import { FormatDate } from "../shared/DateServices";
+import SwapResidentModal from "./SwapResidentModal";
+import { useState } from "react";
+import InfoModal from "./InfoModal";
 
 
 const DutyCardModal = (props) => {
-    const { open, handleClose, duty } = props
+    const { open, handleClose, duty, swappable = false } = props
     const date = FormatDate(duty.date)
-
+    const [nestedOpen, setNestedOpen] = useState(false);
+    const handleNestedOpen = () => setNestedOpen(true);
+    const handleNestedClose = () => setNestedOpen(false);
+    
+    const [infoOpen, setInfoOpen] = useState(false)
+    const handleInfoOpen = () => setInfoOpen(true)
+    const handleInfoClose = () => setInfoOpen(false)
 
     return (
         <>
@@ -33,6 +42,16 @@ const DutyCardModal = (props) => {
                             </Typography>
                         )
                     })}
+                    {swappable ? (<div className="flex justify-evenly pt-2">
+                    <Button variant="contained">
+                        Обмен
+                    </Button>
+                    <Button variant="contained" onClick={handleNestedOpen}>
+                        Замена
+                    </Button>
+                    <SwapResidentModal handleInfoOpen={handleInfoOpen} duty_pk={duty.pk} open={nestedOpen} handleClose={handleNestedClose} />
+                    <InfoModal header={'Успех!'} description={'Запрос успешно отправлен'} open={infoOpen} handleClose={handleInfoClose} />
+                    </div>) : (<div></div>)}
                 </div>
             </Modal>
         </>

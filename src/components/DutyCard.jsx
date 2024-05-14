@@ -7,7 +7,7 @@ import { useState } from 'react';
 import DutyCardModal from './DutyCardModal';
 
 const DutyCard = (props) => {
-    const { duty } = props
+    const { duty, swappable = false } = props
     const date = FormatDate(duty.date)
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -36,7 +36,7 @@ const DutyCard = (props) => {
                                 )
                             })}
                         </div>
-                        <DutyCardModal open={open} handleClose={handleClose} duty={duty} />
+                        <DutyCardModal open={open} handleClose={handleClose} duty={duty} swappable={swappable} />
                     </CardContent>
                 </div>
             </Card>
