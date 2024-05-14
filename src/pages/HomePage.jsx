@@ -1,12 +1,11 @@
 import ErrorCard from "../components/ErrorCard"
+import NearestDutiesCard from "../components/NearestDutiesCard"
 
 
 const HomePage = () => {
     return (
         <>
-            <ErrorCard>
-
-            </ErrorCard>
+            <NearestDutiesCard />
         </>
     )
 }
