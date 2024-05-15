@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const DutyCardModal = (props) => {
     const navigate = useNavigate()
     const { open, handleClose, duty, swappable = false } = props
-    const date = FormatDate(duty.date)
+    const date = FormatDate(duty.date, false)
     const [nestedOpen, setNestedOpen] = useState(false);
     const handleNestedOpen = () => setNestedOpen(true);
     const handleNestedClose = () => setNestedOpen(false);

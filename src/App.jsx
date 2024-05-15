@@ -9,6 +9,7 @@ import RoomBookStaffPage from "./pages/RoomBookStaffPage"
 import AllDutiesPage from "./pages/AllDutiesPage"
 import MyDutiesPage from "./pages/MyDutiesPage"
 import DutiesToSwapPage from "./pages/DutiesToSwapPage"
+import NotificationsPage from "./pages/NotificationsPage"
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/book_create" element={<RoomBookStaffPage />} />
         <Route path="/all_duties" element={<AllDutiesPage />} />
         <Route path="/my_duties" element={<MyDutiesPage />} />
+        <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/swap_duties/:duty_pk" element={<DutiesToSwapPage />} />
         <Route path="/test" element={<AllDutiesPage />} />
       </Route>
