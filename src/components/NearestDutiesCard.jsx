@@ -14,9 +14,6 @@ const NearestDutiesCard = () => {
             if (response.data.length > 0) {
                 setDuty(response.data[0])
             }
-            else {
-                setDuty({})
-            }
         })
     }
 
@@ -40,7 +37,7 @@ const NearestDutiesCard = () => {
                         className="flex justify-center items-center"
                     >
                         <Typography>
-                            {duty === null ? 'Загрузка...' : duty == {} ? 'Нет дежурств в ближайшее время' : 
+                            {duty === null ? 'Нет дежурств в ближайшее время' : 
                             <div>Ближайшее дежурство {FormatDate(duty.date, false)}</div>}
                         </Typography>
                     </CardContent>
