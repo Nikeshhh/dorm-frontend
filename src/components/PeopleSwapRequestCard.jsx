@@ -3,9 +3,9 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { Button, Typography } from "@mui/material";
 import { useState } from 'react';
-import DutySwapRequestCardModal from './DutySwapRequestCardModal';
+import PeopleSwapRequestCardModal from './PeopleSwapRequestCardModal';
 
-const DutySwapRequestCard = (props) => {
+const PeopleSwapRequestCard = (props) => {
     const { swap_request, handleInfoAcceptedOpen, handleInfoDeclinedOpen } = props
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
@@ -23,7 +23,7 @@ const DutySwapRequestCard = (props) => {
                         className="flex justify-between items-center"
                     >
                         <Typography>
-                            Запрос на обмен дежурствами
+                            Запрос на замену на дежурстве
                         </Typography>
                         <Button 
                             variant={(swap_request.accepted | swap_request.declined | swap_request.canceled) ? 'contained' : 'outlined'}
@@ -31,7 +31,7 @@ const DutySwapRequestCard = (props) => {
                         >
                             {swap_request.accepted ? 'Принята' : swap_request.declined ? 'Отклонена' : swap_request.canceled ? 'Отменена' : 'Отправлена'}
                         </Button>
-                        <DutySwapRequestCardModal
+                        <PeopleSwapRequestCardModal
                             open={open}
                             handleClose={handleClose}
                             swap_request={swap_request}
@@ -45,4 +45,4 @@ const DutySwapRequestCard = (props) => {
     )
 }
 
-export default DutySwapRequestCard
+export default PeopleSwapRequestCard

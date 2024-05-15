@@ -3,10 +3,11 @@ import { useEffect, useState } from "react"
 import Loader from "../components/Loader"
 import DutySwapRequestCard from '../components/DutySwapRequestCard'
 import InfoModal from '../components/InfoModal'
+import PeopleSwapRequestCard from '../components/PeopleSwapRequestCard'
 
 
 const NotificationsPage = () => {
-    const [notificationsData, setNotificationsData] = useState(null)
+    const [notificationsData, setNotificationsData] = useState([])
     const [content, setContent] = useState(null)
 
     const [infoAcceptedOpen, setInfoAcceptedOpen] = useState(false)
@@ -17,27 +18,38 @@ const NotificationsPage = () => {
     const handleInfoDeclinedOpen = () => setInfoDeclinedOpen(true)
     const handleInfoDeclinedClose = () => setInfoDeclinedOpen(false)
 
-    const fetchSwapDuties = () => {
-        api.get('v1/duties/swap-duties/get_incoming_requests/').then((response) => {
+    const fetchSwapRequests = () => {
+        api.get('v1/duties/swap-requests/').then((response) => {
             setNotificationsData(response.data)
         }).catch(() => {
 
         })
     }
 
+
     useEffect(() => {
-        fetchSwapDuties()
+            fetchSwapRequests()
     }, [])
 
     useEffect(() => {
         setContent(
             notificationsData?.map((swap_request) => {
-                return (<DutySwapRequestCard
-                    key={swap_request.pk}
-                    swap_request={swap_request}
-                    handleInfoAcceptedOpen={handleInfoAcceptedOpen}
-                    handleInfoDeclinedOpen={handleInfoDeclinedOpen}
-                />)
+                if (swap_request.current_user) {
+                    return (<PeopleSwapRequestCard
+                        key={swap_request.pk}
+                        swap_request={swap_request}
+                        handleInfoAcceptedOpen={handleInfoAcceptedOpen}
+                        handleInfoDeclinedOpen={handleInfoDeclinedOpen}
+                    />)
+                }
+                else {
+                    return (<DutySwapRequestCard
+                        key={swap_request.pk}
+                        swap_request={swap_request}
+                        handleInfoAcceptedOpen={handleInfoAcceptedOpen}
+                        handleInfoDeclinedOpen={handleInfoDeclinedOpen}
+                    />)
+                }
             })
         )
     }, [notificationsData])
