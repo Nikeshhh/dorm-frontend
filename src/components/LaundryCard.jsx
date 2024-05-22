@@ -50,7 +50,7 @@ const LaundryCard = (props) => {
                     {record.time_start.slice(0, 5)} - {record.time_end.slice(0, 5)}
                 </Typography>
                 <Typography>
-                    {isOwned ? 'Yours' : isAvailable ? 'Free' : 'Not free'}
+                    {isOwned ? 'Ваша' : isAvailable ? 'Свободна' : 'Занята'}
                 </Typography>
                 <Button
                     variant="contained"

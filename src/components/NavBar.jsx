@@ -22,13 +22,14 @@ const NavBar = () => {
           navigate(newValue)
         }}
         style={{
-          height: "10vh"
+          height: "10vh",
+          // borderTop: '2px solid black'
         }}
       >
-        <BottomNavigationAction value="/home" className="px-0" label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction value="/laundry" className="px-0" label="Laundry" icon={<LocalLaundryServiceIcon />} />
-        <BottomNavigationAction value="/book" className="px-0" label="Book" icon={<BookIcon />} />
-        <BottomNavigationAction value="/profile" className="px-0" label="Profile" icon={<AccountBoxIcon />} />
+        <BottomNavigationAction value="/home" className="px-0"  icon={<HomeIcon />} />
+        <BottomNavigationAction value="/laundry" className="px-0"  icon={<LocalLaundryServiceIcon />} />
+        <BottomNavigationAction value="/book" className="px-0"  icon={<BookIcon />} />
+        <BottomNavigationAction value="/profile" className="px-0"  icon={<AccountBoxIcon />} />
       </BottomNavigation>
     </>
   )

@@ -1,5 +1,6 @@
 import { AppBar } from "@mui/material"
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useNavigate } from "react-router-dom";
 
 
@@ -16,6 +17,13 @@ const HeaderBar = () => {
 
                 }}
             >
+                <div
+                    // className="col-start-4"
+                    style={{ width: '100%', height: '10vh' }}
+                    onClick={() => {navigate(-1)}}
+                >
+                    <ArrowBackIcon style={{ width: '100%', height: '100%' }} />
+                </div>
                 <div
                     className="col-start-4"
                     style={{ width: '100%', height: '10vh' }}

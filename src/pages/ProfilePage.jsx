@@ -26,18 +26,24 @@ const ProfilePage = () => {
         <>
         {userData ? 
             (<div className="flex flex-col justify-center items-center" style={{ height: '80vh' }}>
-                <div className="p-4">
-                    <Typography variant="h6" gutterBottom>
-                        Имя пользователя: {userData.username}
+                <div className="p-4" style={{ border: '4px solid #AAB', borderRadius: '6px'}}>
+                    <Typography className="text-center" variant="h6" gutterBottom>
+                        Имя пользователя:
                     </Typography>
-                    <Typography variant="h6" gutterBottom>
-                        Фамилия: {userData.surname}
+                    <Typography className="text-center" variant="h6" gutterBottom>
+                        {userData.username}
                     </Typography>
-                    <Typography variant="h6" gutterBottom>
-                        Имя: {userData.name}
+                    <Typography className="text-center" variant="h6" gutterBottom>
+                        ФИО:
                     </Typography>
-                    <Typography variant="h6" gutterBottom>
-                        Отчество: {userData.second_name}
+                    <Typography className="text-center" variant="h6" gutterBottom>
+                        {userData.surname}
+                    </Typography>
+                    <Typography className="text-center" variant="h6" gutterBottom>
+                        {userData.name}
+                    </Typography>
+                    <Typography className="text-center" variant="h6" gutterBottom>
+                        {userData.second_name}
                     </Typography>
                     <div className="mt-4">
                         <Button onClick={handleOpen} variant="contained" color="primary" fullWidth>

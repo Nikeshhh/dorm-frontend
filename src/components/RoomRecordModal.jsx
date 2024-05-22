@@ -21,13 +21,19 @@ const RoomRecordModal = (props) => {
                     style={{ backgroundColor: "#E6E9E1", maxWidth: "90vw" }}
                 >
                     <Typography id="modal-modal-title" variant="h6" component="h2">
-                        {record.author}
+                        Автор:
+                    </Typography>
+                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                        {record.author.surname} {record.author.name} {record.author.second_name}
+                    </Typography>
+                    <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                            Оценка: {record.grade}
                     </Typography>
                     <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             {record.comments}
                     </Typography>
                     <Typography>
-                        {record.grade} {date}
+                        {date}
                     </Typography>
                 </div>
             </Modal>

@@ -30,7 +30,6 @@ function App() {
         <Route path="/my_duties" element={<MyDutiesPage />} />
         <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/swap_duties/:duty_pk" element={<DutiesToSwapPage />} />
-        <Route path="/test" element={<AllDutiesPage />} />
       </Route>
     </Routes>
     </>

@@ -29,6 +29,7 @@ const NearestDutiesCard = () => {
         <>
             <Card
                 className="grid col-span-full align-center"
+                style={{backgroundColor: '#32CD32', marginBottom: '10px', marginTop: '10px'}}
             >
                 <div
                     onClick={handleRedirectMyDuties}
