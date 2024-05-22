@@ -15,7 +15,7 @@ const UserProposalCard = (props) => {
     const cleanDescription = () => {
         const description = proposal.description
         if (description.length > 10) {
-            return description.slice(0, 20) + '...'
+            return description.slice(0, 10) + '...'
         }
         return description
     }

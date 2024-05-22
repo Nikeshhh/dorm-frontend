@@ -17,13 +17,13 @@ const InfoModal = (props) => {
                 <div className="p-4 rounded text-center"
                     style={{ backgroundColor: "#E6E9E1", maxWidth: "90vw" }}
                 >
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                    <Typography id="modal-modal-title" variant="h6" component="h2" gutterBottom>
                         {header}
                     </Typography>
-                    <Typography>
+                    <Typography gutterBottom>
                         {description}
                     </Typography>
-                    <Button onClick={handleClose} variant="contained">
+                    <Button onClick={handleClose} variant="contained" gutterBottom>
                         {button_text}
                     </Button>
                 </div>
