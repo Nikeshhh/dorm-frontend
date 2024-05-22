@@ -10,6 +10,7 @@ import AllDutiesPage from "./pages/AllDutiesPage"
 import MyDutiesPage from "./pages/MyDutiesPage"
 import DutiesToSwapPage from "./pages/DutiesToSwapPage"
 import NotificationsPage from "./pages/NotificationsPage"
+import UserProposalsPage from "./pages/UserProposalsPage"
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/my_duties" element={<MyDutiesPage />} />
         <Route path="/notifications" element={<NotificationsPage />} />
         <Route path="/swap_duties/:duty_pk" element={<DutiesToSwapPage />} />
+        <Route path="/my_proposals" element={<UserProposalsPage />} />
       </Route>
     </Routes>
     </>
