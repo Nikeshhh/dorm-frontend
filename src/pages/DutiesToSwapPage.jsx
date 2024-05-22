@@ -11,7 +11,7 @@ const DutiesToSwapPage = () => {
     const [content, setContent] = useState(null)
 
     const fetchDuties = () => {
-        api.get('v1/duties/records/').then((response) => {
+        api.get(`v1/duties/records/${duty_pk}/duties_to_swap/`).then((response) => {
             setDutiesData(response.data)
         })
     }

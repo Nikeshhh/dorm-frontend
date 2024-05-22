@@ -70,14 +70,17 @@ const DutySwapRequestCardModal = (props) => {
                             {FormatDate(swap_request.first_duty.date, false)}
                         </Button>
                     </Typography>
-                    <div className="flex justify-evenly pt-2">
-                        <Button variant="contained" onClick={handleAcceptRequest}>
-                            Принять
-                        </Button>
-                        <Button variant="contained" color="error" onClick={handleDeclineRequest}>
-                            Отклонить
-                        </Button>
-                    </div>
+                    {swap_request.accepted | swap_request.declined | swap_request.canceled ? 
+                    <></>
+                    : <div className="flex justify-evenly pt-2">
+                    <Button variant="contained" onClick={handleAcceptRequest}>
+                        Принять
+                    </Button>
+                    <Button variant="contained" color="error" onClick={handleDeclineRequest}>
+                        Отклонить
+                    </Button>
+                </div>}
+                    
                 </div>
             </Modal>
             <DutyCardModal open={yourDutyOpen} handleClose={handleYourDutyClose} duty={swap_request.second_duty} />

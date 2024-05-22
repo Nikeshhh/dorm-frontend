@@ -29,7 +29,7 @@ const DutySwapRequestCard = (props) => {
                             variant={(swap_request.accepted | swap_request.declined | swap_request.canceled) ? 'contained' : 'outlined'}
                             color={swap_request.declined | swap_request.canceled ? 'error' : 'primary'}
                         >
-                            {swap_request.accepted ? 'Принята' : swap_request.declined ? 'Отклонена' : swap_request.canceled ? 'Отменена' : 'Отправлена'}
+                            {swap_request.accepted ? 'Принят' : swap_request.declined ? 'Отклонен' : swap_request.canceled ? 'Отменен' : 'Отправлен'}
                         </Button>
                         <DutySwapRequestCardModal
                             open={open}
