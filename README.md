@@ -1,8 +1,27 @@
-# React + Vite
+# Приложения для общежития - Моя ВКР
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Фронтенд приложения системы для общежития.
 
-Currently, two official plugins are available:
+Система автоматизирует такие процессы как:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Формирование графиков дежурств
+* Корректировка графиков дежурств
+* Регистрация результатов проведения санитарных проверок
+* Обслуживание журнала регистрации работы прачечной
+* Обслуживание журнала заявок на ремонт
+
+## Установка
+Клонировать репозиторий
+```
+git clone https://github.com/Nikeshhh/dorm-frontend.git
+```
+
+Установить зависимости
+```
+npm install
+```
+
+Запустить dev сервер
+```
+npm run dev
+```
