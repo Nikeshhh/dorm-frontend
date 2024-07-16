@@ -56,15 +56,6 @@ const ProfilePage = () => {
             :
             <Loader />
 }
-            {/* {userData ? (<div>
-            <p>{userData.username}</p>
-            <p>{userData.surname}</p>
-            <p>{userData.name}</p>
-            <p>{userData.second_name}</p>
-            <Button onClick={handleOpen}>Выйти</Button>
-            <LogOutModal open={open} handleClose={handleClose} />
-            </div>
-            ) : <Loader /> } */}
         </>
     )
 }

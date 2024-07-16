@@ -39,10 +39,10 @@ const RoomRecordStaffCard = (props) => {
                         <Typography>
                             {record.room.number}
                         </Typography>
-                        <RoomRecordStaffModal open={open} handleClose={handleClose} record={record} />
                     </CardContent>
                 </div>
             </Card>
+            <RoomRecordStaffModal open={open} handleClose={handleClose} record={record} />
         </>
     )
 }

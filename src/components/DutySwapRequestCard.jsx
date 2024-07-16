@@ -31,6 +31,9 @@ const DutySwapRequestCard = (props) => {
                         >
                             {swap_request.accepted ? 'Принят' : swap_request.declined ? 'Отклонен' : swap_request.canceled ? 'Отменен' : 'Отправлен'}
                         </Button>
+                    </CardContent>
+                </div>
+            </Card>
                         <DutySwapRequestCardModal
                             open={open}
                             handleClose={handleClose}
@@ -38,9 +41,6 @@ const DutySwapRequestCard = (props) => {
                             handleInfoAcceptedOpen={handleInfoAcceptedOpen}
                             handleInfoDeclinedOpen={handleInfoDeclinedOpen}
                         />
-                    </CardContent>
-                </div>
-            </Card>
         </>
     )
 }

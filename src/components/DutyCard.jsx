@@ -8,7 +8,7 @@ import DutyCardModal from './DutyCardModal';
 
 const DutyCard = (props) => {
     const { duty, swappable = false } = props
-    const date = FormatDate(duty.date)
+    const date = FormatDate(duty.date, false)
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -27,7 +27,7 @@ const DutyCard = (props) => {
                         <Typography>
                             {date}
                         </Typography>
-                        <div>
+                        <div className='text-center'>
                             {duty.people.map((pupil) => {
                                 return (
                                     <Typography key={pupil.pk}>

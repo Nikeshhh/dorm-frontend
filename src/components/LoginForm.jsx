@@ -48,16 +48,10 @@ const LoginForm = () => {
                 onChange={(e) => setPassword(e.target.value)}
             />
             <Link
-                className="col-span-2 content-center text-center"
+                className="col-span-4 content-center text-center"
                 fontSize="16px"
             >
                 Не можете войти?
-            </Link>
-            <Link 
-                className="col-span-2 content-center text-center"
-                fontSize="16px"
-            >
-                Забыли пароль?
             </Link>
             <Button
                 className="col-start-2 col-end-4"

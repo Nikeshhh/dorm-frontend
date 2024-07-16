@@ -9,7 +9,7 @@ import InfoModal from './InfoModal';
 
 const DutySwapCard = (props) => {
     const { duty, parent_duty_pk, swappable = false } = props
-    const date = FormatDate(duty.date)
+    const date = FormatDate(duty.date, false)
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
@@ -32,7 +32,7 @@ const DutySwapCard = (props) => {
                         <Typography>
                             {date}
                         </Typography>
-                        <div>
+                        <div className='text-center'>
                             {duty.people.map((pupil) => {
                                 return (
                                     <Typography key={pupil.pk}>
@@ -41,11 +41,11 @@ const DutySwapCard = (props) => {
                                 )
                             })}
                         </div>
-                        <DutySwapCardModal handleInfoOpen={handleInfoOpen} open={open} parent_duty_pk={parent_duty_pk} handleClose={handleClose} duty={duty} swappable={swappable} />
-                        <InfoModal header={'Успех!'} description={'Запрос успешно отправлен'} open={infoOpen} handleClose={handleInfoClose} />
                     </CardContent>
                 </div>
             </Card>
+                        <DutySwapCardModal handleInfoOpen={handleInfoOpen} open={open} parent_duty_pk={parent_duty_pk} handleClose={handleClose} duty={duty} swappable={swappable} />
+                        <InfoModal header={'Успех!'} description={'Запрос успешно отправлен'} open={infoOpen} handleClose={handleInfoClose} />
         </>
     )
 }

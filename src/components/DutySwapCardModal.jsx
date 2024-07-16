@@ -8,7 +8,7 @@ import { useCookies } from "react-cookie";
 
 const DutySwapCardModal = (props) => {
     const { open, handleClose, duty, parent_duty_pk, handleInfoOpen } = props
-    const date = FormatDate(duty.date)
+    const date = FormatDate(duty.date, false)
     const [chosenPupilPk, setChosenPupilPk] = useState(duty.people[0].pk)
     const [cookies] = useCookies(['csrftoken'])
 
